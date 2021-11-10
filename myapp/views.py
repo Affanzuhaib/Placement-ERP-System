@@ -46,3 +46,9 @@ def signin(request):
     
     return render(request, "signin.html")
   #return render(request,'signin.html')
+    
+
+def signout(request):
+    logout(request)
+    messages.success(request, "Logged Out Successfully!!")
+    return redirect('home')
