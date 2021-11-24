@@ -1,0 +1,64 @@
+{% extends 'home.html' %}
+{% block contactus %} active {% endblock contactus %}
+{% block style %}
+<style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;}
+        
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          margin-top: 6px;
+          margin-bottom: 16px;
+          resize: vertical;
+        }
+        
+        input[type=submit] {
+          background-color: #04AA6D;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #0faf17;
+        }
+        
+        .container[id=cont] {
+          border-radius: 10px;
+          background-color:#086863;
+          padding: 20px;
+        }
+</style>
+{% endblock style %}
+
+{% block body %}
+      <br>
+    <center><h1><u>Contact Form</u></h1></center>
+    <br>
+    <div class="container" id="cont">
+      <form method="post">
+        {% csrf_token %}
+        <label for="name">Name</label>
+        <input type="text" id="fname" name="Name" placeholder="Your name..">
+    
+        <label for="email">E-mail</label>
+        <input type="text" id="email" name="email" placeholder="Your E-mail address..">
+
+        <label for="phoneno">phoneno</label>
+        <input type="text" id="phoneno" name="phoneno" placeholder="Your phoneno..">        
+    
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    
+        <input class= "submit-button" type="submit" value="Submit">
+      </form>
+    </div>
+    
+{% endblock body %}
+
